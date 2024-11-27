@@ -2,7 +2,7 @@
 This pipeline queries gnomAD SNVs that impact the anticodon in tRNAs. Such variants could potentially have an effect on mRNA translation as they create a mismatch between the codon the tRNA recognizes and the amino acid it inserts, potentially misreading a given codon genome-wide.
 
 ## Install nextflow and conda
-Follow steps in https://www.nextflow.io/docs/latest/install.html#install-nextflow
+Follow steps in https://www.nextflow.io/docs/latest/install.html#install-nextflow\
 and https://conda-forge.org/download/
 
 ## Clone repo
