@@ -43,10 +43,10 @@ workflow {
                     params.GNOMAD_data_type, 
                     params.GNOMAD_genome_build)
 
+    // filter out empty VCFs
     vcf_with_records_ch = GET_GNOMAD_DATA.out.vcf
         .filter { it[5] == "true" }
         .map { id, chromosome, start, end, vcf_file, has_records ->
-            // Optionally remove the has_records field if not needed downstream
             [id, chromosome, start, end, vcf_file]
         }
 
