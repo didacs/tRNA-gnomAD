@@ -32,7 +32,7 @@ mkdir hg38-tRNAs
 tar -xvzf hg38-tRNAs.tar.gz -C hg38-tRNAs
 ```
 
-## run the pipeline
+## Run the pipeline
 ```
 nextflow run main.nf \
     --input hg38-tRNAs/hg38-tRNAs-confidence-set.ss \

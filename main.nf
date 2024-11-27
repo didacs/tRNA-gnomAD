@@ -34,9 +34,6 @@ workflow {
     // Run PARSE_TRNA process
     PARSE_TRNA(input_ch)
 
-    // View the output
-    PARSE_TRNA.out.csv_output.view { "Parsed tRNA output: $it" }
-
     // Create a new channel from the CSV output
     regions_ch = PARSE_TRNA.out.csv_output
         .splitCsv(header:true)
@@ -45,7 +42,7 @@ workflow {
         }
 
     // Run GET_GNOMAD_DATA process
-    gnomad_data = GET_GNOMAD_DATA(regions_ch, 
+    GET_GNOMAD_DATA(regions_ch, 
                     params.GNOMAD_release_version, 
                     params.GNOMAD_data_type, 
                     params.GNOMAD_genome_build)
