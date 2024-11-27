@@ -11,7 +11,7 @@ cd tRNA-gnomAD
 ```
 
 ## Create conda env
-Not necessary if `samtools` is not in your PATH, which is required to index the genome fasta file below
+Not necessary if `samtools` is in your PATH, which is required to index the genome fasta file below
 ```
 mamba env create -f environment.yml
 mamba activate trna-vars
