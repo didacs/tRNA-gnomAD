@@ -10,10 +10,6 @@ include { GET_CONSENSUS_FROM_VCF } from './modules/get_consensus_from_vcf'
 include { MERGE_DATA } from './modules/merge_data'
 include { CONCATENATE } from './modules/concatenate'
 
-// Define parameters
-params.input = "$projectDir/input.ss"
-params.outdir = "results"
-
 // Log parameters
 log.info """\
     P A R S E   t R N A   P I P E L I N E
