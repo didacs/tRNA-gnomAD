@@ -73,7 +73,6 @@ workflow {
     GET_CONSENSUS_FROM_VCF(split_vcf_ch.combine(ref_dir_ch))
 
     MERGE_DATA(GET_CONSENSUS_FROM_VCF.out.consensus.combine(PARSE_TRNA.out.csv_output))
-    // MERGE_DATA.out.toList().unique().view()
     CONCATENATE(MERGE_DATA.out.toList().unique())
 }
 
