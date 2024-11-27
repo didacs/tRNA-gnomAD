@@ -71,8 +71,6 @@ workflow {
                 [id, chrom, start, end, split_vcf]
             }
         }
-    // split_vcf_ch.view()
-    // split_vcf_ch.combine(ref_dir_ch).view()
 
     // get consensus sequence
     GET_CONSENSUS_FROM_VCF(split_vcf_ch.combine(ref_dir_ch))
