@@ -1,11 +1,17 @@
 # tRNA anticodon genetic variants
-This pipeline queries gnomAD SNVs that impact the anticodon in tRNAs. Such variants could potentially have an effect on mRNA translation as they create a mismatch between the codon the tRNA recognizes and the amino acid it inserts, essentially misreading a correct codon in the CDS.
+This pipeline queries gnomAD SNVs that impact the anticodon in tRNAs. Such variants could potentially have an effect on mRNA translation as they create a mismatch between the codon the tRNA recognizes and the amino acid it inserts, potentially misreading a given codon genome-wide.
 
-## install nextflow
+## Install nextflow
 Follow steps in https://www.nextflow.io/docs/latest/install.html#install-nextflow
 
+## Clone repo
+```
+git clone https://github.com/didacs/tRNA-gnomAD.git
+cd tRNA-gnomAD
+```
+
 ## Create conda env
-Not necessary if samtools is not in your PATH, which is required to index the genome fasta file below
+Not necessary if `samtools` is not in your PATH, which is required to index the genome fasta file below
 ```
 mamba env create -f environment.yml
 mamba activate trna-vars
@@ -28,6 +34,9 @@ tar -xvzf hg38-tRNAs.tar.gz -C hg38-tRNAs
 
 ## run the pipeline
 ```
-nextflow run /Users/didac/github/tRNA-gnomAD/main.nf --input hg38-tRNAs/hg38-tRNAs-confidence-set.ss --ref_dir ref/ --fasta_filename GRCh38.p14.genome.fa
+nextflow run main.nf \
+    --input hg38-tRNAs/hg38-tRNAs-confidence-set.ss \
+    --ref_dir ref/ \
+    --fasta_filename GRCh38.p14.genome.fa
 ```
 
